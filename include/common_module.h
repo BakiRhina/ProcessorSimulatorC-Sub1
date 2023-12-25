@@ -9,8 +9,10 @@ int nor_gate(int input1, int input2);
 int xor_gate(int input1, int input2);
 
 // Declaration of basic components
-
 int multiplexer_2b(int input1, int input2, int select);
+
+// Exceptions and Error functions
+bool valid_binary_input(int input1, int input2);
 
 
 
