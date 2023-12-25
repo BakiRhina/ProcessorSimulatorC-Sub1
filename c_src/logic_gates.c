@@ -1,26 +1,27 @@
 #include "common_module.h"
 #include "stdbool.h"
 
+// If the compiler doesn't support stdbool.h header
 #define True
-#define False
+#define False 
 
-int AND(int input1, int input2) {
+int and_gate(int input1, int input2) {
   return input1 & input2;
 }
 
-int NAND(int input1, int input2) {
+int nand_gate(int input1, int input2) {
   return !(input1 & input2);
 }
 
-int OR(int input1, int input2) {
+int or_gate(int input1, int input2) {
   return input1 | input2;
 }
 
-int NOR(int input1, int input2) {
+int nor_gate(int input1, int input2) {
   return !(input1 | input2);
 }
 
-int XOR(int input1, int input2) {
+int xor_gate(int input1, int input2) {
   return input1 ^ input2;
 }
 
