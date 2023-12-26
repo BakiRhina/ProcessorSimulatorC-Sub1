@@ -31,19 +31,24 @@ int and_gate_4bit(int input1, int input2, int input3) {
 
 // 4 bits AND gate
 int and_gate_4bit(int input1, int input2, int input3, int input4) {
-  if (valid_binary_input(input1, input2)) {
-    return input1 & input2 & input3 & input4;
-  } else {
-    printf("Not a binary number");
-    return -1;
-  }
+  return input1 & input2 & input3 & input4;
 }
 
 // Variable input number AND gate
 
-int and_gate_var(int num_inputs, int inputs[]) {
-
-}
+  int and_gate_var(int num_inputs, int inputs[]) {
+    int result = inputs[0]; // initialize result with first value of the input 0 or 1.
+    
+    for (int i = 1; i < num_inputs; ++i) {
+      if (!valid_binary_input(inputs[i])) {
+        printf("Input at index %d is not a binary\n", i);
+        return -1;
+      } else {
+        result &= inputs[i]; // If result is not initialized (empty) the operator & will lead to errors.
+      }
+    }
+    return result;
+  }
 
 //!SECTION
 
@@ -90,13 +95,5 @@ int not_gate(int input) {
     printf("Not a binary number");
     return -1;
   }
-}
-
-bool valid_binary_2bits(int input1, int input2) {
-  return (input1 == 0 || input1 == 1 || input2 == 0 || input2 == 1);
-}
-
-bool valid_binary_input(int input) {
-  return (input == 0 || input == 1);
 }
 
