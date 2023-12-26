@@ -16,6 +16,7 @@ int not_gate(int input);
 
 // Declaration of basic components
 int multiplexer_2b(int input1, int input2, int select);
+int multiplexer_2b_nand(int input1, int input2, int select);
 
 // Exceptions and Error functions
 bool valid_binary_input(int input1, int input2);

@@ -1,4 +1,5 @@
 #include "common_module.h"
+#include "c_module1.h"
 #include "stdio.h"
 
 // 2 bits Multiplexor
