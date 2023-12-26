@@ -50,7 +50,15 @@ int xor_gate(int input1, int input2) {
     printf("Not a binary number");
     return -1;
   }
-  
+}
+
+int not_gate(int input) {
+  if (input == 1 || input == 0) {
+    return !(input);
+  } else {
+    printf("Not a binary number");
+    return -1;
+  }
 }
 
 bool valid_binary_input(int input1, int input2) {
