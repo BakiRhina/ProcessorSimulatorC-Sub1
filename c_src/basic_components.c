@@ -8,9 +8,10 @@ int multiplexer_2b(int input1, int input2, int select) {
   int a_and_nselect = and_gate(nselect, input1);
   int b_and_select = and_gate(select, input2);
   int output = or_gate(a_and_nselect, b_and_select); // (S'·A + S·B)
+  return output;
 }
 
-// 2 bits multiplexor only with nand gates
+// 2 bits Multiplexor only with nand gates
 int multiplexer_2b_nand(int input1, int input2, int select) {
   int not_select = nand_gate(select, select);
   int a_and_nselect = nand_gate(not_select, input1);
@@ -19,7 +20,7 @@ int multiplexer_2b_nand(int input1, int input2, int select) {
   return output;
 }
 
-// 4 bits multiplexor
+// 4 bits Multiplexor
 int multiplexer_4b(int input1, int input2, int input3, int input4, int s0, int s1) {
   int ns0 = not_gate(s0);
   int ns1 = not_gate(s1);
