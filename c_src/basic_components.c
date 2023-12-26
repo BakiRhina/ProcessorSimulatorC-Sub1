@@ -20,5 +20,13 @@ int multiplexer_2b_nand(int input1, int input2, int select) {
 }
 
 int multiplexer_4b(int input1, int input2, int input3, int input4, int s0, int s1) {
-  int not_s0 = 
+  int ns0 = not_gate(s0);
+  int ns1 = not_gate(s1);
+  int ns0_and_ns1_and_input1 = and_gate_var(3, (int[3]){ns0, ns1, input1});
+  int ns0_and_s1_and_input2 = and_gate_var(3, (int[3]){ns0, s1, input2});
+  int s0_and_ns1_and_input3 = and_gate_var(3, (int[3]){s0, ns1, input3});
+  int s0_and_s1_and_input4 = and_gate_var(3, (int[3]){s0, s1, input4});
+  int output = or_gate_var(4, (int[4]){ns0_and_ns1_and_input1, ns0_and_s1_and_input2, s0_and_ns1_and_input3, s0_and_s1_and_input4});
+
+  return output;
 }
