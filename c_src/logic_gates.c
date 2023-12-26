@@ -16,13 +16,8 @@ int and_gate_2bit(int input1, int input2) {
 }
 
 // 3 bits AND gate
-int and_gate_4bit(int input1, int input2, int input3) {
-  if (valid_binary_input(input1, input2)) {
-    return input1 & input2 & input3;
-  } else {
-    printf("Not a binary number");
-    return -1;
-  }
+int and_gate_3bit(int input1, int input2, int input3) {
+  return input1 & input2 & input3;
 }
 
 // 4 bits AND gate
@@ -80,7 +75,7 @@ int nand_gate_var(int num_inputs, int inputs[]) {
 //SECTION - OR gates
 
 // 2 bits OR gate
-int or_gate(int input1, int input2) {
+int or_gate_2b(int input1, int input2) {
   if (valid_binary_input(input1, input2)) {
     return input1 | input2;
   } else {
