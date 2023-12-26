@@ -19,3 +19,6 @@ int multiplexer_2b_nand(int input1, int input2, int select) {
   return output;
 }
 
+int multiplexer_4b(int input1, int input2, int input3, int input4, int s0, int s1) {
+  int not_s0 = 
+}
