@@ -8,6 +8,7 @@
 
 
 //SECTION - AND gates
+
 // 2 bits AND gate
 int and_gate_2bit(int input1, int input2) {
   if (valid_binary_input(input1, input2)) {
@@ -36,6 +37,12 @@ int and_gate_4bit(int input1, int input2, int input3, int input4) {
     printf("Not a binary number");
     return -1;
   }
+}
+
+// Variable input number AND gate
+
+int and_gate_var(int num_inputs, int inputs[]) {
+
 }
 
 //!SECTION
@@ -85,7 +92,11 @@ int not_gate(int input) {
   }
 }
 
-bool valid_binary_input(int input1, int input2) {
+bool valid_binary_2bits(int input1, int input2) {
   return (input1 == 0 || input1 == 1 || input2 == 0 || input2 == 1);
+}
+
+bool valid_binary_input(int input) {
+  return (input == 0 || input == 1);
 }
 
