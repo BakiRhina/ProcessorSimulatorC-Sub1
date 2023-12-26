@@ -7,9 +7,18 @@
 #define False 
 
 
-int and_gate(int input1, int input2) {
+int and_gate_2bit(int input1, int input2) {
   if (valid_binary_input(input1, input2)) {
     return input1 & input2;
+  } else {
+    printf("Not a binary number");
+    return -1;
+  }
+}
+
+int and_gate_4bit(int input1, int input2, int input3, int input4) {
+  if (valid_binary_input(input1, input2)) {
+    return input1 & input2 & input3 & input4;
   } else {
     printf("Not a binary number");
     return -1;
