@@ -46,7 +46,7 @@ int and_gate_var_1arg(int inputs[]) {
   needs to have a sentiel value when the array of bits is over. [1,1,0,1,-1]
   
   We could implement a similar functionality by sending the number of bits contained
-  in the array with an integer at the 1rst position of the array.
+  in the array with an integer at the 1rst position of the array. [4,0,0,1,0]
   
   */
   int result = inputs[0]; // initialize result with first value of the input 0 or 1.
