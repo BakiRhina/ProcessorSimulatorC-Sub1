@@ -40,7 +40,7 @@ int multiplexer_4b(int input1, int input2, int input3, int input4, int s0, int s
 
 //SECTION - ADDERS
 
-int full_adder_ref(int input1, int input2, int carry_in, int* sum, int* carry_out) {
+int full_adder(int input1, int input2, int carry_in, int* sum, int* carry_out) {
   int a_xor_b = xor_gate(input1, input2);
   int a_and_b = and_gate_2bit(input1, input2);
   int a_xor_b_and_cin = and_gate_2bit(a_xor_b, carry_in);
