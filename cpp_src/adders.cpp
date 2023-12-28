@@ -1,17 +1,21 @@
 
 // RIPPLE CARRY ADDER --> INTRODUCES A DELAY BUT IT'S LESS COMPLEX
 typedef struct {
-  int sum;
+  int sum[4];
   int carry_out;
-} FullAdderResult;
+} FourBitAdderResult;
 
-FullAdderResult full_adder(int input1, int input2, int carry_in) {
-  FullAdderResult result;
-  int a_xor_b = input1 ^ input2;
-  int a_and_b = input1 & input2;
-  int a_xor_b_and_cin = a_xor_b & carry_in;
-  result.sum = a_xor_b ^ carry_in;
-  result.carry_out = (a_xor_b_and_cin | a_and_b);
+FourBitAdderResult four_bit_adder(int A[4], int B[4]) {
+  FourBitAdderResult result;
+  int carry = 0;
+
+  for (int i = 0; i < 4; i++) {
+    FullAdderResult fa_result = full_adder(A[i], B[i], carry);
+    result.sum[i] = fa_result.sum;
+    carry = fa_result.carry_out;
+  }
+
+  result.carry_out = carry;
   return result;
 }
 
