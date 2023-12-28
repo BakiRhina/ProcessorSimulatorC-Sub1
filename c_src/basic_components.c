@@ -47,3 +47,4 @@ int full_adder(int input1, int input2, int carry_in, int* sum, int* carry_out) {
   *sum = xor_gate(a_xor_b, carry_in);
   *carry_out = xor_gate(a_xor_b_and_cin, a_and_b);
 }
+

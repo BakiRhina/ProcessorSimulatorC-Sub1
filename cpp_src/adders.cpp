@@ -1,22 +1,14 @@
+#include "common_module.h"
+#include "stdio.h"
 
 // RIPPLE CARRY ADDER --> INTRODUCES A DELAY BUT IT'S LESS COMPLEX
-typedef struct {
-  int sum[4];
-  int carry_out;
-} FourBitAdderResult;
 
-FourBitAdderResult four_bit_adder(int A[4], int B[4]) {
-  FourBitAdderResult result;
+void four_bit_adder(int input1[4], int input2[4], *sum[], *carry_out) {
   int carry = 0;
 
-  for (int i = 0; i < 4; i++) {
-    FullAdderResult fa_result = full_adder(A[i], B[i], carry);
-    result.sum[i] = fa_result.sum;
-    carry = fa_result.carry_out;
+  for (i = 0, i < 4, i++) {
+    *sum[i] = (input1[i], input2[i])
   }
-
-  result.carry_out = carry;
-  return result;
 }
 
 
