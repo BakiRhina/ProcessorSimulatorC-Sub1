@@ -3,11 +3,13 @@
 
 // RIPPLE CARRY ADDER --> INTRODUCES A DELAY BUT IT'S LESS COMPLEX
 
-void four_bit_adder(int input1[4], int input2[4], *sum[], *carry_out) {
+// TODO LOOK INTO REFERENCE AND HOW TO PASS AND RECEIVE VALUES FROM FUNCTIONS.
+void four_bit_adder(int input1[4], int input2[4], int *sum[], int *carry_out) {
   int carry = 0;
+  int i = 0;
+  for (i , i < 4, i++) {
+    *sum[i] = full_adder(input1[i], input2[i], carry);
 
-  for (i = 0, i < 4, i++) {
-    *sum[i] = (input1[i], input2[i])
   }
 }
 
