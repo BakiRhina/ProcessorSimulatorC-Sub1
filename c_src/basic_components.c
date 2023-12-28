@@ -2,6 +2,9 @@
 #include "c_module1.h"
 #include "stdio.h"
 
+
+//SECTION - MULTIPLEXORS
+
 // 2 bits Multiplexor
 int multiplexer_2b(int input1, int input2, int select) {
   int nselect = not_gate(select);
@@ -31,4 +34,39 @@ int multiplexer_4b(int input1, int input2, int input3, int input4, int s0, int s
   int output = or_gate_var(4, (int[4]){ns0_and_ns1_and_input1, ns0_and_s1_and_input2, s0_and_ns1_and_input3, s0_and_s1_and_input4});
 
   return output;
+}
+
+//!SECTION
+
+//SECTION - ADDERS
+
+int full_adder(int input1, int input2, int carry_in) {
+  int a_xor_b = xor_gate(input1, input2);
+  int a_and_b = and_gate_2bit(input1, input2);
+  int a_xor_b_and_cin = and_gate_2bit(a_xor_b, carry_in);
+  int sum = xor_gate(a_xor_b, carry_in);
+  int carry_out = xor_gate(a_xor_b_and_cin, a_and_b);
+  return sum, carry_out;
+}
+
+
+// LOOK AHEAD ADDER //TODO - INCOMPLETE!
+int full_adder(int inputs_a[], int inputs_b[], int carry_in) {
+  //check number of bits in bus A
+  int nbits_a = inputs_a[0];
+  // check number of bits in bus B
+  int nbits_b = inputs_b[0];
+  // instantiate the summatory list
+  // if the number of bits is the same, they can be added
+  if (nbits_a == nbits_b) {
+    int i = 1;
+    while (i < nbits_a) {
+      if (!valid_binary_input(inputs_a[i]) | !valid_binary_input(inputs_b[i])) {
+        printf("Input at index %d is not binary\n", i);
+        return -1;
+      } else {
+        
+      }
+    }
+  } 
 }
